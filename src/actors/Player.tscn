@@ -7,6 +7,8 @@
 extents = Vector2( 40.6826, 44.0707 )
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -970.589 ],
@@ -24,4 +26,6 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 960.636, -426.35 )
 current = true
+limit_left = 0
+limit_top = 0
 smoothing_enabled = true

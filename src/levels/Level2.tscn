@@ -11,6 +11,7 @@
 [node name="Level2" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 1114109, 0, 0, 1048576, 0, 0, 1048585, 0, 0 )
 
 [node name="Background" type="Node" parent="."]
 
