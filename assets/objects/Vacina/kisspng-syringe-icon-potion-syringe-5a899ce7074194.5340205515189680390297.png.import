@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/kisspng-syringe-icon-potion-syringe-5a899ce7074194.5340205515189680390297.png-31324f4ae4aa28fac754025fc6227c7b.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/objects/Vacina/kisspng-syringe-icon-potion-syringe-5a899ce7074194.5340205515189680390297.png"
+dest_files=[ "res://.import/kisspng-syringe-icon-potion-syringe-5a899ce7074194.5340205515189680390297.png-31324f4ae4aa28fac754025fc6227c7b.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
