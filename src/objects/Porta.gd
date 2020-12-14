@@ -3,11 +3,7 @@ extends Area2D
 
 onready var animation: AnimationPlayer = get_node("AnimationPlayer")
 
-export var next_scene: PackedScene
-
-func _get_configuration_warning() -> String:
-	return "A Propriedade next_scene não pode ser vazia" if not next_scene else ""
-	
+export(String, FILE, "*tscn") var next_scene
 
 func _on_Porta_body_entered(body) -> void:
 	teleport()
@@ -16,4 +12,4 @@ func _on_Porta_body_entered(body) -> void:
 func teleport() -> void:
 	animation.play("fade in")
 	yield(animation, "animation_finished")
-	get_tree().change_scene_to(next_scene)
+	get_tree().change_scene("res://src/levels/Level2.tscn")

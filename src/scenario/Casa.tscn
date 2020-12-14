@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/objects/Porta.gd" type="Script" id=1]
+[ext_resource path="res://src/objects/Porta.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/objects/casa.png" type="Texture" id=3]
+
+[node name="Casa" type="Node"]
+
+[node name="casa" type="Sprite" parent="."]
+position = Vector2( 16045.9, 276.836 )
+z_index = -1
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Porta" type="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 15491.1, 689.844 )
+z_index = -2
+script = ExtResource( 1 )
+[connection signal="body_entered" from="Porta" to="Porta" method="_on_Porta_body_entered"]
