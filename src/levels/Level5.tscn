@@ -1,9 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/scenario/scene01.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/actors/Player.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://src/scenario/invisible_wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/corona/ataque.png" type="Texture" id=5]
+[ext_resource path="res://assets/corona/01.png" type="Texture" id=6]
+[ext_resource path="res://assets/corona/02.png" type="Texture" id=7]
+[ext_resource path="res://assets/corona/03.png" type="Texture" id=8]
+[ext_resource path="res://assets/corona/04.png" type="Texture" id=9]
+[ext_resource path="res://assets/corona/05.png" type="Texture" id=10]
+[ext_resource path="res://src/levels/Coronaboss.gd" type="Script" id=11]
+[ext_resource path="res://assets/square.png" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -31,6 +39,23 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 40.6826, 44.0707 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "corona",
+"speed": 4.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 239.854
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 295.167
+
 [node name="Level5" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
@@ -46,8 +71,53 @@ layer = -100
 layer = -99
 follow_viewport_enable = true
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -797.17, 988.894 )
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( -0.2948, 992.069 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_horizontal_guides_": [ -970.589 ],
+"_edit_vertical_guides_": [ -2902.61 ]
+}
+
+[node name="player" type="Sprite" parent="Player"]
+position = Vector2( 961.47, -59.0956 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 961.585, -59.2595 )
+shape = SubResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 960.636, -426.35 )
+smoothing_enabled = true
 
 [node name="invisible_wall" parent="." instance=ExtResource( 4 )]
-tile_data = PoolIntArray( -786252, 0, 0, -720716, 0, 0, -655180, 0, 0, -589644, 0, 0, -524108, 0, 0, -458572, 0, 0, -393036, 0, 0, -327500, 0, 0, -261964, 0, 0, -196428, 0, 0, -130892, 0, 0, -65356, 0, 0, 65535, 0, 0, 20, 0, 0, 180, 0, 0, 131071, 0, 0, 65556, 0, 0, 65716, 0, 0, 196607, 0, 0, 131092, 0, 0, 131252, 0, 0, 262143, 0, 0, 196628, 0, 0, 196788, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262324, 0, 0, 393215, 0, 0, 327700, 0, 0, 327860, 0, 0, 458751, 0, 0, 393236, 0, 0, 393396, 0, 0, 524287, 0, 0, 458772, 0, 0, 458932, 0, 0, 589823, 0, 0, 524308, 0, 0, 524468, 0, 0, 655359, 0, 0, 589844, 0, 0, 590004, 0, 0, 720895, 0, 0, 655380, 0, 0, 655540, 0, 0 )
+visible = false
+tile_data = PoolIntArray( -786252, 0, 0, -720716, 0, 0, -655180, 0, 0, -589644, 0, 0, -524108, 0, 0, -458572, 0, 0, -393036, 0, 0, -327500, 0, 0, -261964, 0, 0, -196428, 0, 0, -130892, 0, 0, -65356, 0, 0, 65535, 0, 0, 20, 0, 0, 180, 0, 0, 131071, 0, 0, 65556, 0, 0, 65716, 0, 0, 196607, 0, 0, 131092, 0, 0, 131252, 0, 0, 262143, 0, 0, 196628, 0, 0, 196788, 0, 0, 327679, 0, 0, 262164, 0, 0, 262324, 0, 0, 393215, 0, 0, 327700, 0, 0, 327860, 0, 0, 458751, 0, 0, 393236, 0, 0, 393396, 0, 0, 524287, 0, 0, 458772, 0, 0, 458932, 0, 0, 589823, 0, 0, 524308, 0, 0, 524468, 0, 0, 655359, 0, 0, 589844, 0, 0, 590004, 0, 0, 720895, 0, 0, 655380, 0, 0, 655540, 0, 0 )
+
+[node name="Coronaboss" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Coronaboss"]
+position = Vector2( 974.248, 333.25 )
+scale = Vector2( 1.22004, 1.21597 )
+frames = SubResource( 3 )
+animation = "corona"
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss"]
+position = Vector2( 964.023, 335.437 )
+shape = SubResource( 4 )
+
+[node name="ataque" type="Sprite" parent="Coronaboss"]
+position = Vector2( 733.951, 681.248 )
+scale = Vector2( 0.358528, 0.346113 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss/ataque"]
+position = Vector2( 12.5375, -25.9738 )
+shape = SubResource( 5 )
