@@ -24,3 +24,7 @@ func _process(delta):
 			flip = true
 	
 
+
+
+func _on_Timer_boss_timeout():
+	queue_free()
