@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/actors/Ataque.gd" type="Script" id=1]
+[ext_resource path="res://assets/corona/ataque.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 221.53
+
+[node name="Ataque" type="KinematicBody2D"]
+position = Vector2( 252.598, 176.446 )
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 699.294, 544.395 )
+scale = Vector2( 0.285306, 0.258999 )
+frames = SubResource( 6 )
+animation = "New Anim"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 702.372, 540.936 )
+scale = Vector2( 0.358528, 0.346113 )
+shape = SubResource( 7 )
