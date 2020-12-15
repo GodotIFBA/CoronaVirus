@@ -122,7 +122,7 @@ position = Vector2( 974.248, 333.25 )
 scale = Vector2( 1.22004, 1.21597 )
 frames = SubResource( 4 )
 animation = "corona"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss"]
@@ -130,7 +130,7 @@ position = Vector2( 964.023, 335.437 )
 shape = SubResource( 5 )
 
 [node name="Ataque" type="KinematicBody2D" parent="Coronaboss"]
-position = Vector2( 493.884, 87.5521 )
+position = Vector2( 258.948, 119.3 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 13 )
@@ -145,26 +145,6 @@ frames = SubResource( 6 )
 animation = "New Anim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss/Ataque"]
-position = Vector2( 702.372, 540.936 )
-scale = Vector2( 0.358528, 0.346113 )
-shape = SubResource( 7 )
-
-[node name="Ataque4" type="KinematicBody2D" parent="Coronaboss"]
-position = Vector2( 29.184, 116.736 )
-collision_layer = 2
-collision_mask = 9
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Coronaboss/Ataque4"]
-position = Vector2( 699.294, 544.395 )
-scale = Vector2( 0.285306, 0.258999 )
-frames = SubResource( 6 )
-animation = "New Anim"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss/Ataque4"]
 position = Vector2( 702.372, 540.936 )
 scale = Vector2( 0.358528, 0.346113 )
 shape = SubResource( 7 )
