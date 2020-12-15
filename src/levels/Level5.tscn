@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://src/scenario/scene01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/actors/Player.gd" type="Script" id=2]
@@ -13,10 +13,14 @@
 [ext_resource path="res://src/actors/Coronaboss.gd" type="Script" id=11]
 [ext_resource path="res://assets/square.png" type="Texture" id=12]
 [ext_resource path="res://src/actors/Ataque.gd" type="Script" id=13]
+[ext_resource path="res://assets/backgrounds/final_stage.jpg" type="Texture" id=14]
 [ext_resource path="res://src/Ataque.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 416, 0, 416, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=2]
 0/name = "icon.png 0"
@@ -40,6 +44,27 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
+1/name = "plataform"
+1/texture = ExtResource( 14 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 736, 960, 416, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 8 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 40.6826, 44.0707 )
@@ -75,16 +100,23 @@ radius = 221.53
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 tile_set = SubResource( 2 )
+cell_size = Vector2( 52, 52 )
 collision_layer = 8
 collision_mask = 3
-tile_data = PoolIntArray( 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0 )
+tile_data = PoolIntArray( 786433, 1, 0, 786460, 1, 0 )
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -100
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -99
-follow_viewport_enable = true
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 584.0
+margin_bottom = 328.0
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( -0.2948, 992.069 )
@@ -95,6 +127,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -970.589 ],
 "_edit_vertical_guides_": [ -2902.61 ]
 }
+speed = Vector2( 500, 1400 )
 
 [node name="player" type="Sprite" parent="Player"]
 position = Vector2( 961.47, -59.0956 )
@@ -110,7 +143,7 @@ smoothing_enabled = true
 
 [node name="invisible_wall" parent="." instance=ExtResource( 4 )]
 visible = false
-tile_data = PoolIntArray( -786252, 0, 0, -720716, 0, 0, -655180, 0, 0, -589644, 0, 0, -524108, 0, 0, -458572, 0, 0, -393036, 0, 0, -327500, 0, 0, -261964, 0, 0, -196428, 0, 0, -130892, 0, 0, -65356, 0, 0, 65535, 0, 0, 20, 0, 0, 180, 0, 0, 131071, 0, 0, 65556, 0, 0, 65716, 0, 0, 196607, 0, 0, 131092, 0, 0, 131252, 0, 0, 262143, 0, 0, 196628, 0, 0, 196788, 0, 0, 327679, 0, 0, 262164, 0, 0, 262324, 0, 0, 393215, 0, 0, 327700, 0, 0, 327860, 0, 0, 458751, 0, 0, 393236, 0, 0, 393396, 0, 0, 524287, 0, 0, 458772, 0, 0, 458932, 0, 0, 589823, 0, 0, 524308, 0, 0, 524468, 0, 0, 655359, 0, 0, 589844, 0, 0, 590004, 0, 0, 720895, 0, 0, 655380, 0, 0, 655540, 0, 0 )
+tile_data = PoolIntArray( -786252, 0, 0, -720716, 0, 0, -655180, 0, 0, -589644, 0, 0, -524108, 0, 0, -458572, 0, 0, -393036, 0, 0, -327500, 0, 0, -261964, 0, 0, -196428, 0, 0, -130892, 0, 0, -65356, 0, 0, 65535, 0, 0, 20, 0, 0, 180, 0, 0, 131071, 0, 0, 65556, 0, 0, 65716, 0, 0, 196607, 0, 0, 131092, 0, 0, 131252, 0, 0, 262143, 0, 0, 196628, 0, 0, 196788, 0, 0, 327679, 0, 0, 262164, 0, 0, 262324, 0, 0, 393215, 0, 0, 327700, 0, 0, 327860, 0, 0, 458751, 0, 0, 393236, 0, 0, 393396, 0, 0, 524287, 0, 0, 458772, 0, 0, 458932, 0, 0, 589823, 0, 0, 524308, 0, 0, 524468, 0, 0, 655359, 0, 0, 589844, 0, 0, 590004, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655540, 0, 0 )
 
 [node name="Coronaboss" type="StaticBody2D" parent="."]
 position = Vector2( 8.97974, 6.7348 )
@@ -123,7 +156,6 @@ position = Vector2( 974.248, 333.25 )
 scale = Vector2( 1.22004, 1.21597 )
 frames = SubResource( 4 )
 animation = "corona"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss"]
@@ -131,6 +163,13 @@ position = Vector2( 964.023, 335.437 )
 shape = SubResource( 5 )
 
 [node name="Ataque" parent="Coronaboss" instance=ExtResource( 15 )]
+position = Vector2( 274.822, 179.621 )
+
+[node name="Ataque8" parent="Coronaboss" instance=ExtResource( 15 )]
+position = Vector2( -229.972, -245.803 )
+
+[node name="Ataque7" parent="Coronaboss" instance=ExtResource( 15 )]
+position = Vector2( 757.392, -239.453 )
 
 [node name="Ataque5" type="KinematicBody2D" parent="Coronaboss"]
 position = Vector2( 284.346, -896.638 )
@@ -173,7 +212,7 @@ scale = Vector2( 0.358528, 0.346113 )
 shape = SubResource( 7 )
 
 [node name="Ataque3" type="KinematicBody2D" parent="Coronaboss"]
-position = Vector2( -544.389, 46.8786 )
+position = Vector2( -363.425, 259.591 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 13 )
@@ -193,7 +232,7 @@ scale = Vector2( 0.358528, 0.346113 )
 shape = SubResource( 7 )
 
 [node name="Ataque2" type="KinematicBody2D" parent="Coronaboss"]
-position = Vector2( 1110.27, 39.7592 )
+position = Vector2( 932.481, 296.918 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 13 )
@@ -213,7 +252,7 @@ scale = Vector2( 0.358528, 0.346113 )
 shape = SubResource( 7 )
 
 [node name="Ataque6" type="KinematicBody2D" parent="Coronaboss"]
-position = Vector2( 1018.2, -611.076 )
+position = Vector2( 1254.2, -667.076 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 13 )
