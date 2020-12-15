@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1 masked.png-65c7f4cf835faa0ab00862ffb3f4a179.stex"
+path="res://.import/5 masked.png-a7f51e4a5ec00eb18bd1f8eb841b1a9d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/1 masked.png"
-dest_files=[ "res://.import/1 masked.png-65c7f4cf835faa0ab00862ffb3f4a179.stex" ]
+source_file="res://assets/Player/Jumping/5 masked.png"
+dest_files=[ "res://.import/5 masked.png-a7f51e4a5ec00eb18bd1f8eb841b1a9d.stex" ]
 
 [params]
 
