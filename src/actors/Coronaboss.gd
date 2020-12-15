@@ -6,6 +6,7 @@ var posicao_final_direita
 var posicao_final_esquerda
 var velocidade = 10
 
+
 func _ready():
 	posicao_inicial = $".".position.x
 	posicao_final_direita = posicao_inicial + 720
