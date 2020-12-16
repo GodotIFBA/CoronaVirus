@@ -345,5 +345,3 @@ texture = ExtResource( 18 )
 position = Vector2( 14923.7, 627.531 )
 scale = Vector2( 0.511132, 0.491182 )
 texture = ExtResource( 17 )
-
-[editable path="Player"]
