@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/scenario/scene01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/City3/Pale/sky_pale.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/backgrounds/City3/Pale/houded2_pale.png" type="Texture" id=7]
 [ext_resource path="res://src/scenario/invisible_wall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/objects/Porta.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/objects/Porta3.gd" type="Script" id=11]
 
 [node name="Level3" type="Node2D"]
 
@@ -95,4 +97,9 @@ position = Vector2( 7982.89, 541.939 )
 texture = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( -793.806, 854.351 )
+position = Vector2( 367.275, 710.109 )
+
+[node name="Porta3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 15856.1, 715.356 )
+z_index = -1000
+script = ExtResource( 11 )
