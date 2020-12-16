@@ -5,12 +5,14 @@ func _physics_process(delta: float) -> void:
 	var direction = get_direction()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
-	if is_on_floor():
-		var teste = 0
-	else:
-		$player.play("Run Mask")
-	
-	if Input.is_action_pressed("move_right"):
+
+	if !is_on_floor() and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_right"):
+		$player.play("Jump")
+		$player.flip_h = false
+	elif !is_on_floor() and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_left"):
+		$player.play("Jump")
+		$player.flip_h = true
+	elif Input.is_action_pressed("move_right"):
 		$player.play("Run")
 		$player.flip_h = false
 	elif Input.is_action_pressed("move_left"):
@@ -18,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		$player.flip_h = true
 	else:
 		$player.play("Idle")
-
+	
 func get_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
