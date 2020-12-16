@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="CoronaVirus"
-run/main_scene="res://src/levels/Level1.tscn"
+run/main_scene="res://src/levels/Level3.tscn"
 config/icon="res://icon.png"
 
 [display]

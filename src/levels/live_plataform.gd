@@ -10,8 +10,8 @@ var velocidade = 9
 
 func _ready():
 	posicao_inicial = $".".position.x
-	posicao_final_direita = posicao_inicial + 550
-	posicao_final_esquerda = posicao_inicial - 550	
+	posicao_final_direita = posicao_inicial + 600
+	posicao_final_esquerda = posicao_inicial - 600
 func _process(delta):
 	if(posicao_inicial <= posicao_final_direita and flip):
 		$"." . position.x += velocidade;
