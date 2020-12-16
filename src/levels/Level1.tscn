@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://src/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/City1/Pale/wheels&hydrant.png" type="Texture" id=2]
@@ -16,11 +16,7 @@
 [ext_resource path="res://assets/objects/desenho-casa-png-1-Transparent-Images-1.png" type="Texture" id=14]
 [ext_resource path="res://src/scenario/Casa.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/backgrounds/City1/Bright/wall2-lado.png" type="Texture" id=16]
-[ext_resource path="res://src/objects/Dinheiro.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/objects/Componente1.tscn" type="PackedScene" id=18]
-[ext_resource path="res://assets/objects/Vacina/kisspng-syringe-icon-potion-syringe-5a899ce7074194.5340205515189680390297.png" type="Texture" id=19]
-[ext_resource path="res://assets/objects/Vacina/kisspng-potion-elixir-of-life-item-magic-invisibility-potion-icon-vector-5ab0f44d562459.3981153715215463173529.png" type="Texture" id=20]
-[ext_resource path="res://assets/objects/Vacina/kisspng-potion-computer-icons-clip-art-5b0093e4df7be4.2272583115267645169154.png" type="Texture" id=21]
+[ext_resource path="res://src/objects/Itens.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/objects/Porta.tscn" type="PackedScene" id=22]
 [ext_resource path="res://src/actors/Player.gd" type="Script" id=23]
 [ext_resource path="res://assets/backgrounds/City2/Bright/road&lamps.png" type="Texture" id=24]
@@ -604,37 +600,7 @@ position = Vector2( 17406.5, 698.449 )
 z_index = -1000
 next_scene = SubResource( 24 )
 
-[node name="Itens" type="Node" parent="."]
-
-[node name="Dinheiro" parent="Itens" instance=ExtResource( 17 )]
-position = Vector2( 2870.06, 449.634 )
-
-[node name="Dinheiro2" parent="Itens" instance=ExtResource( 17 )]
-position = Vector2( 8615.38, 807.228 )
-
-[node name="Dinheiro3" parent="Itens" instance=ExtResource( 17 )]
-position = Vector2( 5934.98, 452.305 )
-
-[node name="Dinheiro4" parent="Itens" instance=ExtResource( 17 )]
-position = Vector2( 13742, -191.744 )
-
-[node name="Componente1" parent="Itens" instance=ExtResource( 18 )]
-position = Vector2( 14995.3, 815.33 )
-
-[node name="kisspng-potion-computer-icons-clip-art-5b0093e4df7be42272583115267645169154" type="Sprite" parent="Itens"]
-position = Vector2( 15847, 756.588 )
-scale = Vector2( 0.344403, 0.317667 )
-texture = ExtResource( 21 )
-
-[node name="kisspng-potion-elixir-of-life-item-magic-invisibility-potion-icon-vector-5ab0f44d5624593981153715215463173529" type="Sprite" parent="Itens"]
-position = Vector2( 16089.1, 779.483 )
-scale = Vector2( 0.411203, 0.343764 )
-texture = ExtResource( 20 )
-
-[node name="kisspng-syringe-icon-potion-syringe-5a899ce70741945340205515189680390297" type="Sprite" parent="Itens"]
-position = Vector2( 16369.8, 808.291 )
-scale = Vector2( 0.511132, 0.491182 )
-texture = ExtResource( 19 )
+[node name="Itens" parent="." instance=ExtResource( 17 )]
 
 [node name="Mask" parent="." instance=ExtResource( 31 )]
 

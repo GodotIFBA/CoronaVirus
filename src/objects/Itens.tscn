@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/objects/Componente1.gd" type="Script" id=1]
+[ext_resource path="res://assets/objects/Vacina/kisspng-potion-computer-icons-clip-art-5b0093e4df7be4.2272583115267645169154.png" type="Texture" id=2]
+[ext_resource path="res://assets/objects/Vacina/kisspng-syringe-icon-potion-syringe-5a899ce7074194.5340205515189680390297.png" type="Texture" id=3]
+[ext_resource path="res://assets/objects/Vacina/kisspng-potion-elixir-of-life-item-magic-invisibility-potion-icon-vector-5ab0f44d562459.3981153715215463173529.png" type="Texture" id=4]
+[ext_resource path="res://src/objects/Dinheiro.gd" type="Script" id=5]
+[ext_resource path="res://src/objects/Dinheiro.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/objects/Componente1.tscn" type="PackedScene" id=7]
+
+[node name="Itens" type="Node"]
+
+[node name="Dinheiro" type="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2870.06, 449.634 )
+rotation = 0.270526
+script = ExtResource( 5 )
+
+[node name="Dinheiro2" type="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 8615.38, 807.228 )
+rotation = 0.270526
+script = ExtResource( 5 )
+
+[node name="Dinheiro3" type="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5934.98, 452.305 )
+rotation = 0.270526
+script = ExtResource( 5 )
+
+[node name="Dinheiro4" type="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 13742, -191.744 )
+rotation = 0.270526
+script = ExtResource( 5 )
+
+[node name="Componente1" type="Area2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 14995.3, 815.33 )
+rotation = 0.270526
+script = ExtResource( 1 )
+
+[node name="kisspng-potion-computer-icons-clip-art-5b0093e4df7be42272583115267645169154" type="Sprite" parent="."]
+position = Vector2( 15847, 756.588 )
+scale = Vector2( 0.344403, 0.317667 )
+texture = ExtResource( 2 )
+
+[node name="kisspng-potion-elixir-of-life-item-magic-invisibility-potion-icon-vector-5ab0f44d5624593981153715215463173529" type="Sprite" parent="."]
+position = Vector2( 16089.1, 779.483 )
+scale = Vector2( 0.411203, 0.343764 )
+texture = ExtResource( 4 )
+
+[node name="kisspng-syringe-icon-potion-syringe-5a899ce70741945340205515189680390297" type="Sprite" parent="."]
+position = Vector2( 16369.8, 808.291 )
+scale = Vector2( 0.511132, 0.491182 )
+texture = ExtResource( 3 )
+[connection signal="body_entered" from="Dinheiro" to="Dinheiro" method="_on_Dinheiro_body_entered"]
+[connection signal="body_entered" from="Dinheiro2" to="Dinheiro2" method="_on_Dinheiro_body_entered"]
+[connection signal="body_entered" from="Dinheiro3" to="Dinheiro3" method="_on_Dinheiro_body_entered"]
+[connection signal="body_entered" from="Dinheiro4" to="Dinheiro4" method="_on_Dinheiro_body_entered"]
+[connection signal="body_entered" from="Componente1" to="Componente1" method="_on_Componente1_body_entered"]
