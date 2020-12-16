@@ -275,9 +275,9 @@ __meta__ = {
 [node name="extended_sky" type="TextureRect" parent="Background/ParallaxBackground/ParallaxLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -1085.04
+margin_top = -1080.04
 margin_right = 1920.0
-margin_bottom = -5.03955
+margin_bottom = -0.0395508
 texture = ExtResource( 2 )
 flip_v = true
 __meta__ = {
