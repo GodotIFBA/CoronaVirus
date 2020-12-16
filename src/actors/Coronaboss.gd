@@ -4,7 +4,7 @@ var flip = true
 var posicao_inicial
 var posicao_final_direita
 var posicao_final_esquerda
-var velocidade = 10
+var velocidade = 9
 
 
 func _ready():
@@ -27,4 +27,5 @@ func _process(delta):
 
 
 func _on_Timer_boss_timeout():
+	
 	queue_free()

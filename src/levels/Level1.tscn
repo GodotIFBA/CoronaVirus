@@ -603,7 +603,7 @@ flip_h = true
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 219.813, 296.265 )
-speed = Vector2( 500, 1400 )
+speed = Vector2( 700, 1400 )
 
 [node name="player" parent="Player" index="0"]
 position = Vector2( 264.25, -61.8356 )
