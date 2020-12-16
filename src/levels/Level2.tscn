@@ -333,6 +333,3 @@ z_index = -1000
 script = ExtResource( 14 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 381.9, 769.737 )
-
-[editable path="Player"]

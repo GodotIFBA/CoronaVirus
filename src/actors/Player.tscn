@@ -27,14 +27,14 @@ animations = [ {
 "name": "Idle Mask",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Jump",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "Jump Mask",
 "speed": 7.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 15 ) ],
@@ -47,10 +47,10 @@ animations = [ {
 "name": "Run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 16 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "Idle",
-"speed": 5.0
+"name": "Jump Mask",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -80,13 +80,12 @@ position = Vector2( 263.773, -61.0302 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 263.16, -222.527 )
+position = Vector2( 265.405, -114.771 )
 current = true
 limit_left = 0
 limit_top = -469
 limit_right = 18500
 limit_bottom = 1064
-smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
