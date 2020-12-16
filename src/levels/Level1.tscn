@@ -14,7 +14,7 @@
 [ext_resource path="res://assets/backgrounds/City1/Bright/road&border.png" type="Texture" id=12]
 [ext_resource path="res://assets/backgrounds/City1/Bright/wheels&hydrant.png" type="Texture" id=13]
 [ext_resource path="res://assets/objects/desenho-casa-png-1-Transparent-Images-1.png" type="Texture" id=14]
-[ext_resource path="res://assets/objects/casa.png" type="Texture" id=15]
+[ext_resource path="res://src/scenario/Casa.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/backgrounds/City1/Bright/wall2-lado.png" type="Texture" id=16]
 [ext_resource path="res://src/objects/Dinheiro.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/objects/Componente1.tscn" type="PackedScene" id=18]
@@ -595,11 +595,7 @@ scale = Vector2( 3.04594, 3.5546 )
 texture = ExtResource( 14 )
 flip_h = true
 
-[node name="casa" type="Sprite" parent="Background/CanvasLayer"]
-position = Vector2( 17679.5, 570.965 )
-scale = Vector2( 0.532884, 0.640027 )
-texture = ExtResource( 15 )
-flip_h = true
+[node name="casa" parent="Background/CanvasLayer" instance=ExtResource( 15 )]
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 

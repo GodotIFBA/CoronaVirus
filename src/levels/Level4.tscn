@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/scenario/scene01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/City4/Pale/fountain&bush_pale.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/objects/Porta.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/objects/Porta4.gd" type="Script" id=12]
+[ext_resource path="res://src/scenario/Casa.tscn" type="PackedScene" id=13]
 
 [node name="Level4" type="Node2D"]
 
@@ -40,6 +41,16 @@ margin_top = -1.0
 margin_right = 1920.0
 margin_bottom = 1079.0
 texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="houses2" type="TextureRect" parent="Background/ParallaxBackground/ParallaxLayer"]
+margin_left = 45.2549
+margin_top = 39.5981
+margin_right = 1965.26
+margin_bottom = 1119.6
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -81,25 +92,26 @@ layer = -99
 follow_viewport_enable = true
 
 [node name="houses2_pale" type="Sprite" parent="Background/CanvasLayer"]
-position = Vector2( 3736.36, 545.714 )
+position = Vector2( 2545, 607.028 )
+scale = Vector2( 1, 1.03704 )
 texture = ExtResource( 4 )
 
-[node name="houses_pale" type="Sprite" parent="Background/CanvasLayer"]
-position = Vector2( 6665.24, 545.714 )
-texture = ExtResource( 8 )
-
 [node name="umbrella&policebox_pale" type="Sprite" parent="Background/CanvasLayer"]
-position = Vector2( 13856.9, 544.252 )
+position = Vector2( 14143.8, 536.701 )
 texture = ExtResource( 7 )
 
 [node name="fountain&bush_pale" type="Sprite" parent="Background/CanvasLayer"]
-position = Vector2( 10057.4, 546.027 )
+position = Vector2( 7512.17, 784.293 )
 texture = ExtResource( 2 )
+offset = Vector2( 3107.57, -159.07 )
+
+[node name="casa" parent="Background/CanvasLayer" instance=ExtResource( 13 )]
+position = Vector2( 16624.7, 506.693 )
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 262.528, 734.093 )
 
 [node name="Porta" parent="." instance=ExtResource( 11 )]
-position = Vector2( 16470.2, 720.299 )
+position = Vector2( 16330.5, 693.871 )
 z_index = -1000
 script = ExtResource( 12 )
