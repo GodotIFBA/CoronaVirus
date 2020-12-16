@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://src/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/City1/Pale/wheels&hydrant.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://assets/backgrounds/City2/Pale/Houses3_pale.png" type="Texture" id=28]
 [ext_resource path="res://assets/backgrounds/City2/Pale/road&lamps_pale.png" type="Texture" id=29]
 [ext_resource path="res://assets/backgrounds/City2/Pale/minishop&callbox_pale.png" type="Texture" id=30]
+[ext_resource path="res://src/objects/Mask.tscn" type="PackedScene" id=31]
 [ext_resource path="res://src/scenario/invisible_wall.tscn" type="PackedScene" id=32]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -616,6 +617,9 @@ limit_top = -150
 limit_right = 18500
 limit_bottom = 1160
 
+[node name="CollisionShape2D" parent="Player/Area2D" index="0"]
+position = Vector2( 260.922, -61.5183 )
+
 [node name="Porta" parent="." instance=ExtResource( 22 )]
 position = Vector2( 17386.3, 698.449 )
 next_scene = SubResource( 24 )
@@ -651,5 +655,8 @@ texture = ExtResource( 20 )
 position = Vector2( 16370.9, 742.843 )
 scale = Vector2( 0.511132, 0.491182 )
 texture = ExtResource( 19 )
+
+[node name="Mask" parent="." instance=ExtResource( 31 )]
+position = Vector2( 1230.37, 644.881 )
 
 [editable path="Player"]
