@@ -56,7 +56,7 @@ func calculate_move_velocity(linear_velocity: Vector2, direction: Vector2, speed
 	if direction.y == -1.0:
 		out.y = speed.y * direction.y
 		
-	if is_jump_interrupted and is_on_floor():
+	if is_jump_interrupted and _velocity.y < 0:
 		out.y = 0.0
 	
 	return out
