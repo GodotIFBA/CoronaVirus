@@ -24,6 +24,10 @@ config/name="CoronaVirus"
 run/main_scene="res://src/levels/Level1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameState="*res://src/GameState.gd"
+
 [display]
 
 window/size/width=1920
