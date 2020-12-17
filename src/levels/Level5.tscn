@@ -56,15 +56,15 @@ animations = [ {
 "name": "Run Mask",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "Jump Mask",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 32 ), ExtResource( 19 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "Run",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Jump Mask",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -74,13 +74,13 @@ extents = Vector2( 63.0475, 106.603 )
 radius = 0.794672
 height = 20.1718
 
-[sub_resource type="ConvexPolygonShape2D" id=9]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=10]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 416, 0, 416, 64, 0, 64 )
 
-[sub_resource type="TileSet" id=11]
+[sub_resource type="TileSet" id=6]
 0/name = "icon.png 0"
 0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
@@ -91,14 +91,14 @@ points = PoolVector2Array( 0, 0, 416, 0, 416, 64, 0, 64 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 9 )
+0/shape = SubResource( 4 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 9 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -112,19 +112,19 @@ points = PoolVector2Array( 0, 0, 416, 0, 416, 64, 0, 64 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 10 )
+1/shape = SubResource( 5 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 10 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
@@ -132,10 +132,10 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=8]
 radius = 239.854
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -148,7 +148,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=10]
 radius = 221.53
 
 [node name="Level5" type="Node2D"]
@@ -161,7 +161,6 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -970.589 ],
 "_edit_vertical_guides_": [ -2902.61 ]
 }
-speed = Vector2( 700, 1400 )
 
 [node name="player" type="AnimatedSprite" parent="Player"]
 position = Vector2( 960.298, -61.9413 )
@@ -187,7 +186,7 @@ scale = Vector2( 80, 10 )
 shape = SubResource( 3 )
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
-tile_set = SubResource( 11 )
+tile_set = SubResource( 6 )
 cell_size = Vector2( 52, 52 )
 collision_layer = 8
 collision_mask = 3
@@ -225,14 +224,14 @@ script = ExtResource( 11 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Coronaboss"]
 position = Vector2( 974.248, 333.25 )
 scale = Vector2( 1.22004, 1.21597 )
-frames = SubResource( 5 )
+frames = SubResource( 7 )
 animation = "corona"
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss"]
 position = Vector2( 964.023, 335.437 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="Ataque" parent="Coronaboss" instance=ExtResource( 15 )]
 position = Vector2( 259.989, 120.291 )
@@ -255,13 +254,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Coronaboss/Ataque5"]
 position = Vector2( 699.294, 544.395 )
 scale = Vector2( 0.285306, 0.258999 )
-frames = SubResource( 7 )
+frames = SubResource( 9 )
 animation = "New Anim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss/Ataque5"]
 position = Vector2( 702.372, 540.936 )
 scale = Vector2( 0.358528, 0.346113 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="Ataque4" type="KinematicBody2D" parent="Coronaboss"]
 position = Vector2( -461.733, -617.255 )
@@ -275,13 +274,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Coronaboss/Ataque4"]
 position = Vector2( 699.294, 544.395 )
 scale = Vector2( 0.285306, 0.258999 )
-frames = SubResource( 7 )
+frames = SubResource( 9 )
 animation = "New Anim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss/Ataque4"]
 position = Vector2( 702.372, 540.936 )
 scale = Vector2( 0.358528, 0.346113 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="Ataque3" type="KinematicBody2D" parent="Coronaboss"]
 position = Vector2( -363.425, 259.591 )
@@ -295,13 +294,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Coronaboss/Ataque3"]
 position = Vector2( 699.294, 544.395 )
 scale = Vector2( 0.285306, 0.258999 )
-frames = SubResource( 7 )
+frames = SubResource( 9 )
 animation = "New Anim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss/Ataque3"]
 position = Vector2( 702.372, 540.936 )
 scale = Vector2( 0.358528, 0.346113 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="Ataque2" type="KinematicBody2D" parent="Coronaboss"]
 position = Vector2( 932.481, 296.918 )
@@ -315,13 +314,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Coronaboss/Ataque2"]
 position = Vector2( 699.294, 544.395 )
 scale = Vector2( 0.285306, 0.258999 )
-frames = SubResource( 7 )
+frames = SubResource( 9 )
 animation = "New Anim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss/Ataque2"]
 position = Vector2( 702.372, 540.936 )
 scale = Vector2( 0.358528, 0.346113 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="Ataque6" type="KinematicBody2D" parent="Coronaboss"]
 position = Vector2( 1254.2, -667.076 )
@@ -335,13 +334,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Coronaboss/Ataque6"]
 position = Vector2( 699.294, 544.395 )
 scale = Vector2( 0.285306, 0.258999 )
-frames = SubResource( 7 )
+frames = SubResource( 9 )
 animation = "New Anim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss/Ataque6"]
 position = Vector2( 702.372, 540.936 )
 scale = Vector2( 0.358528, 0.346113 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer_boss" to="Coronaboss" method="_on_Timer_boss_timeout"]
