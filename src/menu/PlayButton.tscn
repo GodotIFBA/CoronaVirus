@@ -1,0 +1,37 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/menu/jogar.png" type="Texture" id=1]
+[ext_resource path="res://assets/menu/button.png" type="Texture" id=2]
+[ext_resource path="res://src/menu/SelectedSound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/menu/PlayButton.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 316, 140 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[node name="PlayButton" type="Button"]
+anchor_right = 0.164583
+margin_right = 12.0006
+margin_bottom = 146.0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 10 )
+icon = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource( 3 )]
+[connection signal="mouse_entered" from="." to="." method="_on_PlayButton_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_PlayButton_pressed"]
