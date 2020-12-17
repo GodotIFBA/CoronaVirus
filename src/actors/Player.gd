@@ -4,6 +4,7 @@ var mascarado = false
 
 
 func _physics_process(delta: float) -> void:
+	get_input()
 	var is_jump_interrupted: = Input.is_action_just_released("move_up")
 	var direction = get_direction()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
@@ -75,3 +76,8 @@ func _on_Area2D_area_entered(area):
 
 func _on_Timer_timeout():
 	mascarado = false
+	
+func get_input():
+	if Input.is_action_just_pressed("pause"):
+		$CanvasLayer/Pause.visible = true
+		get_tree().paused = true

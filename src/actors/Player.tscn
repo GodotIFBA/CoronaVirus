@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/Player/1 masked.png" type="Texture" id=1]
 [ext_resource path="res://src/actors/Player.gd" type="Script" id=2]
@@ -19,8 +19,24 @@
 [ext_resource path="res://assets/Player/Jumping/3 masked.png" type="Texture" id=17]
 [ext_resource path="res://assets/Player/Jumping/4 masked.png" type="Texture" id=18]
 [ext_resource path="res://assets/Player/Jumping/5 masked.png" type="Texture" id=19]
+[ext_resource path="res://assets/fonts/Roboto-MediumItalic.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://assets/fonts/Roboto-Italic.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://assets/fonts/Roboto-Light.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://src/objects/PlayerUIController.gd" type="Script" id=23]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 20 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 22 )
+
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
@@ -32,9 +48,9 @@ animations = [ {
 "name": "Run Mask",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "Jump",
+"name": "Jump Mask",
 "speed": 7.0
 }, {
 "frames": [ ExtResource( 16 ) ],
@@ -42,21 +58,21 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 7.0
+}, {
 "frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Run",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "Jump Mask",
-"speed": 7.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 63.0475, 106.603 )
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 0.794672
 height = 20.1718
 
@@ -69,15 +85,177 @@ __meta__ = {
 "_edit_vertical_guides_": [ -2902.61 ]
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 23 )
+
+[node name="GameOver" type="Control" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0156863, 0.0156863, 0.0156863, 0.623529 )
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOver"]
+anchor_left = 0.5
+anchor_top = 0.307
+anchor_right = 0.5
+anchor_bottom = 0.307
+margin_left = -291.0
+margin_top = -143.602
+margin_right = 291.0
+margin_bottom = 143.398
+custom_fonts/font = SubResource( 1 )
+text = "Game Over
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgain" type="Button" parent="CanvasLayer/GameOver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -477.5
+margin_top = -139.362
+margin_right = 477.5
+margin_bottom = -15.3625
+custom_fonts/font = SubResource( 2 )
+text = "Tentar Novamente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/GameOver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -477.5
+margin_top = 35.544
+margin_right = 477.5
+margin_bottom = 159.544
+custom_fonts/font = SubResource( 2 )
+text = "Menu Principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="CanvasLayer/GameOver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -477.5
+margin_top = 223.439
+margin_right = 477.5
+margin_bottom = 347.439
+custom_fonts/font = SubResource( 2 )
+text = "Sair"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Control" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0156863, 0.0156863, 0.0156863, 0.623529 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -379.0
+margin_top = -386.745
+margin_right = 379.0
+margin_bottom = -99.7448
+custom_fonts/font = SubResource( 1 )
+text = "Jogo Pausado
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="CanvasLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -477.5
+margin_top = -139.362
+margin_right = 477.5
+margin_bottom = -15.3625
+custom_fonts/font = SubResource( 2 )
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgain" type="Button" parent="CanvasLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -477.5
+margin_top = 35.544
+margin_right = 477.5
+margin_bottom = 159.544
+custom_fonts/font = SubResource( 2 )
+text = "Tentar Novamente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -477.5
+margin_top = 223.439
+margin_right = 477.5
+margin_bottom = 347.439
+custom_fonts/font = SubResource( 2 )
+text = "Menu Principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+margin_left = 20.9763
+margin_right = 263.976
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 3 )
+text = "Auxílio: 00000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="player" type="AnimatedSprite" parent="."]
 position = Vector2( 264.25, -61.8356 )
 scale = Vector2( 0.259906, 0.206898 )
-frames = SubResource( 1 )
+frames = SubResource( 4 )
 animation = "Jump Mask"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 263.773, -61.0302 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 265.405, -114.771 )
@@ -92,6 +270,9 @@ limit_bottom = 1064
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 260.922, -61.5183 )
 scale = Vector2( 80, 10 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
+[connection signal="pressed" from="CanvasLayer/Pause/Back" to="CanvasLayer" method="_on_Back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/TryAgain" to="CanvasLayer" method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/MainMenu" to="CanvasLayer" method="_on_MainMenu_pressed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
