@@ -1,7 +1,6 @@
 extends Actor
 var mascarado = false
-
-
+var life = 0
 
 func _physics_process(delta: float) -> void:
 	get_input()
@@ -73,9 +72,9 @@ func _on_Area2D_area_entered(area):
 		get_node("Timer").start()
 	elif "Enemy" in area.name:
 		if mascarado == true:
-			perde meia life
+			life - 0.5
 		else:
-			perde uma life
+			life - 1
 
 
 func _on_Timer_timeout():
