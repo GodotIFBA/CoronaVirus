@@ -27,20 +27,20 @@ animations = [ {
 "name": "Idle Mask",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "Idle",
-"speed": 5.0
+"name": "Run Mask",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 16 ) ],
 "loop": true,
-"name": "Run Mask",
-"speed": 10.0
+"name": "Idle",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,

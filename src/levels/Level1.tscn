@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://src/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/City1/Pale/wheels&hydrant.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://assets/backgrounds/City2/Pale/minishop&callbox_pale.png" type="Texture" id=30]
 [ext_resource path="res://src/objects/Mask.tscn" type="PackedScene" id=31]
 [ext_resource path="res://src/scenario/invisible_wall.tscn" type="PackedScene" id=32]
+[ext_resource path="res://src/actors/Enemy.tscn" type="PackedScene" id=33]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 1920, 0, 1920, 240, 0, 240 )
@@ -622,6 +623,9 @@ position = Vector2( 260.922, -61.5183 )
 [node name="Porta" parent="." instance=ExtResource( 22 )]
 position = Vector2( 17386.3, 698.449 )
 next_scene = SubResource( 24 )
+
+[node name="Enemy" parent="." instance=ExtResource( 33 )]
+position = Vector2( 2244.81, 757.51 )
 
 [node name="Itens" type="Node" parent="."]
 
