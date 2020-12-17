@@ -2,24 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-<<<<<<< HEAD:assets/Enemy/Enemy 1-1.png.import
-path="res://.import/Enemy 1-1.png-6b21d2d5f64e1bd62eaaa5f3cb65dd56.stex"
-=======
 path="res://.import/banco.png-e99fa59c76936be829ce3a5fb4321b00.stex"
->>>>>>> e55094bc5843ffb7d08ffed60a72475de0eabc05:assets/objects/banco.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:assets/Enemy/Enemy 1-1.png.import
-source_file="res://assets/Enemy/Enemy 1-1.png"
-dest_files=[ "res://.import/Enemy 1-1.png-6b21d2d5f64e1bd62eaaa5f3cb65dd56.stex" ]
-=======
 source_file="res://assets/objects/banco.png"
 dest_files=[ "res://.import/banco.png-e99fa59c76936be829ce3a5fb4321b00.stex" ]
->>>>>>> e55094bc5843ffb7d08ffed60a72475de0eabc05:assets/objects/banco.png.import
 
 [params]
 

@@ -1,6 +1,8 @@
 extends Actor
 var mascarado = false
 
+
+
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("move_up")
 	var direction = get_direction()
@@ -65,5 +67,11 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_Area2D_area_entered(area):
-	if area.name == "Mask":
+	if "Mask" in area.name:
 		mascarado = true
+		get_node("Timer").start()
+		
+
+
+func _on_Timer_timeout():
+	mascarado = false

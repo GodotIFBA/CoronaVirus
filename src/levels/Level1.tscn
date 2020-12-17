@@ -595,6 +595,9 @@ flip_h = true
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 
+[node name="Timer" type="Timer" parent="Player"]
+wait_time = 2.0
+
 [node name="Porta1" parent="." instance=ExtResource( 22 )]
 position = Vector2( 17406.5, 698.449 )
 z_index = -1000
@@ -603,5 +606,9 @@ next_scene = SubResource( 24 )
 [node name="Itens" parent="." instance=ExtResource( 17 )]
 
 [node name="Mask" parent="." instance=ExtResource( 31 )]
+
+[node name="Mask2" parent="." instance=ExtResource( 31 )]
+position = Vector2( 1929.58, 493.442 )
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_Timer_timeout"]
 
 [editable path="Player"]
