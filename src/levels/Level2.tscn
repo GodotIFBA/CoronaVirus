@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://src/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/City2/Pale/minishop&callbox_pale.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://src/scenario/invisible_wall.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/objects/Porta2.gd" type="Script" id=14]
 [ext_resource path="res://assets/objects/casa.png" type="Texture" id=15]
+[ext_resource path="res://src/objects/CanvasBarLife.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/objects/Dinheiro.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/objects/Vacina/kisspng-potion-computer-icons-clip-art-5b0093e4df7be4.2272583115267645169154.png" type="Texture" id=21]
 [ext_resource path="res://src/objects/Porta.tscn" type="PackedScene" id=22]
@@ -395,5 +396,12 @@ texture = ExtResource( 21 )
 position = Vector2( 17426.5, 698.833 )
 z_index = -1000
 script = ExtResource( 14 )
+next_scene = ""
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 16 )]
+
+[node name="CanvasLayer" parent="CanvasLayer" instance=ExtResource( 16 )]
+
+[node name="CanvasLayer" parent="CanvasLayer/CanvasLayer" instance=ExtResource( 16 )]
