@@ -48,6 +48,11 @@ animations = [ {
 "name": "Run Mask",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Jump Mask",
@@ -62,11 +67,6 @@ animations = [ {
 "loop": true,
 "name": "Jump",
 "speed": 7.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Run",
-"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
@@ -84,6 +84,8 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -970.589 ],
 "_edit_vertical_guides_": [ -2902.61 ]
 }
+speed = null
+gravity = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
