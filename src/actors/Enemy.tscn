@@ -1,10 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/actors/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://assets/Enemy/Enemy 2/Character + Anim/Character/1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Enemy/Enemy 2/Left 2.png" type="Texture" id=2]
+[ext_resource path="res://assets/Enemy/Enemy 2/Left 7.png" type="Texture" id=3]
+[ext_resource path="res://assets/Enemy/Enemy 2/Left 5.png" type="Texture" id=4]
+[ext_resource path="res://assets/Enemy/Enemy 2/Left 1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Enemy/Enemy 2/Left 3.png" type="Texture" id=6]
+[ext_resource path="res://assets/Enemy/Enemy 2/Left 6.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44.8452, 92.2688 )
+extents = Vector2( 44.8452, 72.569 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 42.0142, 16.9228 )
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 216.436, -68.974 )
@@ -13,11 +29,22 @@ collision_mask = 9
 script = ExtResource( 1 )
 speed = Vector2( 400, 1400 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3.90125, -14.7742 )
+[node name="CovidDetector" type="CollisionShape2D" parent="."]
+position = Vector2( 0.593623, -7.28265 )
 shape = SubResource( 1 )
 
-[node name="enemy-idle" type="Sprite" parent="."]
-position = Vector2( -28.6487, -13.9488 )
-scale = Vector2( 4.15692, 4.15692 )
-texture = ExtResource( 2 )
+[node name="enemy" type="AnimatedSprite" parent="."]
+position = Vector2( -3.1774, -25.1861 )
+scale = Vector2( 4.15692, 4.06702 )
+frames = SubResource( 2 )
+animation = "walk"
+frame = 2
+
+[node name="StompDetector" type="Area2D" parent="."]
+position = Vector2( -134.848, -31.4644 )
+collision_layer = 2
+
+[node name="CollisionShape" type="CollisionShape2D" parent="StompDetector"]
+position = Vector2( 134.346, -72.4171 )
+shape = SubResource( 3 )
+[connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]

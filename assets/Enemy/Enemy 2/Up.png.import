@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Up.png-9eb8fd262e2d130fe0def3c5f9d618ec.stex"
+path="res://.import/Up.png-c400645b108cf3d859e0b123a6a6f340.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemy/Enemy 2/Character + Anim/Animation/Movement/Up.png"
-dest_files=[ "res://.import/Up.png-9eb8fd262e2d130fe0def3c5f9d618ec.stex" ]
+source_file="res://assets/Enemy/Enemy 2/Up.png"
+dest_files=[ "res://.import/Up.png-c400645b108cf3d859e0b123a6a6f340.stex" ]
 
 [params]
 

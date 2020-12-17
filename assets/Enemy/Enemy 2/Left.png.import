@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Left 5.png-29d2717b1b9d84755b5af29e6235bd63.stex"
+path="res://.import/Left.png-6832ddf0b71efc7a4a5253b2aebddf89.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemy/Enemy 2/Character + Anim/Animation/Movement/Left 5.png"
-dest_files=[ "res://.import/Left 5.png-29d2717b1b9d84755b5af29e6235bd63.stex" ]
+source_file="res://assets/Enemy/Enemy 2/Left.png"
+dest_files=[ "res://.import/Left.png-6832ddf0b71efc7a4a5253b2aebddf89.stex" ]
 
 [params]
 
