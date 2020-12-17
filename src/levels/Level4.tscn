@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://assets/objects/barril.png" type="Texture" id=1]
 [ext_resource path="res://assets/backgrounds/City4/Pale/fountain&bush_pale.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/objects/box.png" type="Texture" id=15]
 [ext_resource path="res://assets/objects/banco.png" type="Texture" id=16]
 [ext_resource path="res://src/levels/live_plataform_lv4.gd" type="Script" id=17]
+[ext_resource path="res://src/objects/CanvasBarLife.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 366, 0, 366, 94, 0, 94 )
@@ -392,3 +393,6 @@ position = Vector2( 262.528, 734.093 )
 position = Vector2( 16330.5, 693.871 )
 z_index = -1000
 script = ExtResource( 12 )
+next_scene = ""
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 18 )]
