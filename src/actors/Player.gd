@@ -9,10 +9,10 @@ func _physics_process(delta: float) -> void:
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
-	if !is_on_floor() and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_right") and mascarado==false:
+	if !is_on_floor() and is_jump_interrupted and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_right") and mascarado==false:
 		$player.play("Jump")
 		$player.flip_h = false
-	elif !is_on_floor() and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_left") and mascarado==false:
+	elif !is_on_floor() and is_jump_interrupted and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_left") and mascarado==false:
 		$player.play("Jump")
 		$player.flip_h = true
 	elif Input.is_action_pressed("move_right") and mascarado==false:
@@ -21,10 +21,10 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("move_left") and mascarado==false:
 		$player.play("Run")
 		$player.flip_h = true
-	elif !is_on_floor() and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_right") and mascarado==true:
+	elif !is_on_floor() and is_jump_interrupted and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_right") and mascarado==true:
 		$player.play("Jump Mask")
 		$player.flip_h = false
-	elif !is_on_floor() and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_left") and mascarado==true:
+	elif !is_on_floor() and is_jump_interrupted and Input.is_action_pressed("move_up") and Input.is_action_pressed("move_left") and mascarado==true:
 		$player.play("Jump Mask")
 		$player.flip_h = true
 	elif Input.is_action_pressed("move_right") and mascarado==true:
@@ -55,7 +55,7 @@ func calculate_move_velocity(linear_velocity: Vector2, direction: Vector2, speed
 	if direction.y == -1.0:
 		out.y = speed.y * direction.y
 		
-	if is_jump_interrupted:
+	if is_jump_interrupted and is_on_floor():
 		out.y = 0.0
 	
 	return out
