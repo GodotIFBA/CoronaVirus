@@ -12,7 +12,7 @@ func _ready():
 		
 func _process(delta):
 	global_rotation = 0
-	atualizarBarra(ConfiguracaoBarra.life)
+	#atualizarBarra(ConfiguracaoBarra.life)
 
 func atualizarBarra(value):
 	lifeBar.texture_progress = barraVerde
