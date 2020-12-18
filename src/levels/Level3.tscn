@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/backgrounds/City3/Bright/houses3.png" type="Texture" id=1]
 [ext_resource path="res://assets/backgrounds/City3/Pale/sky_pale.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://src/objects/Dinheiro.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/objects/Componente1.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/actors/Enemy.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/objects/Mask.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 129, 0, 129, 67, 0, 67 )
@@ -320,6 +321,8 @@ flip_h = true
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 367.275, 710.109 )
 
+[node name="Timer2" type="Timer" parent="Player"]
+
 [node name="Porta3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 15514.1, 615.44 )
 z_index = -1000
@@ -383,3 +386,9 @@ speed = Vector2( 500, 1400 )
 [node name="Enemy3" parent="." instance=ExtResource( 21 )]
 position = Vector2( 6518.74, 707.826 )
 speed = Vector2( 500, 1400 )
+
+[node name="Mask" parent="." instance=ExtResource( 22 )]
+position = Vector2( 4147.48, 341.985 )
+
+[node name="Mask2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 7404.89, -10.0148 )

@@ -388,7 +388,10 @@ position = Vector2( 16624.7, 506.693 )
 [node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 262.528, 734.093 )
 
+[node name="Timer2" type="Timer" parent="Player"]
+
 [node name="Porta" parent="." instance=ExtResource( 11 )]
 position = Vector2( 16330.5, 693.871 )
 z_index = -1000
 script = ExtResource( 12 )
+next_scene = ""

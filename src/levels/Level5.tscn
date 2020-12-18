@@ -37,21 +37,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 28 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "Run Mask",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "Idle Mask",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 32 ), ExtResource( 19 ), ExtResource( 31 ) ],
-"loop": true,
-"name": "Run",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
 "name": "Idle",
@@ -62,10 +47,25 @@ animations = [ {
 "name": "Jump Mask",
 "speed": 7.0
 }, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "Idle Mask",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 30 ), ExtResource( 18 ), ExtResource( 33 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Run Mask",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 32 ), ExtResource( 19 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -186,6 +186,8 @@ position = Vector2( 968.029, -55.8614 )
 scale = Vector2( 80, 10 )
 shape = SubResource( 3 )
 
+[node name="Timer" type="Timer" parent="Player"]
+
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 tile_set = SubResource( 6 )
 cell_size = Vector2( 52, 52 )
@@ -227,7 +229,7 @@ position = Vector2( 974.248, 333.25 )
 scale = Vector2( 1.22004, 1.21597 )
 frames = SubResource( 7 )
 animation = "corona"
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss"]
