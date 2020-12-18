@@ -62,21 +62,20 @@ func calculate_move_velocity(linear_velocity: Vector2, direction: Vector2, speed
 
 
 func _on_Area2D_body_entered(body):
-	if body.name == "Mask":
-		mascarado = true
-	if "Enemy" in body.name:
+	if "Enemy"in body.name:
 		$AudioStreamPlayer2D.play()
+		if mascarado == true:
+			mascarado = false
+			life - 0.5
+		else:
+			life - 1
 
 
 func _on_Area2D_area_entered(area):
 	if "Mask" in area.name:
 		mascarado = true
 		get_node("Timer").start()
-	elif "Enemy" in area.name:
-		if mascarado == true:
-			life - 0.5
-		else:
-			life - 1
+		
 
 
 func _on_Timer_timeout():

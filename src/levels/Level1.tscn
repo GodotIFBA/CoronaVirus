@@ -602,7 +602,7 @@ flip_h = true
 [node name="Player" parent="." instance=ExtResource( 9 )]
 
 [node name="Timer" type="Timer" parent="Player"]
-wait_time = 2.0
+wait_time = 10.0
 
 [node name="Porta1" parent="." instance=ExtResource( 22 )]
 position = Vector2( 17406.5, 698.449 )
@@ -614,7 +614,7 @@ next_scene = SubResource( 24 )
 [node name="Mask" parent="." instance=ExtResource( 31 )]
 
 [node name="Mask2" parent="." instance=ExtResource( 31 )]
-position = Vector2( 1929.58, 493.442 )
+position = Vector2( 2532.93, 779.098 )
 
 [node name="Enemy" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2027.22, 780.91 )
