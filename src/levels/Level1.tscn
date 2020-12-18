@@ -615,7 +615,10 @@ next_scene = SubResource( 24 )
 [node name="Mask" parent="." instance=ExtResource( 31 )]
 
 [node name="Mask2" parent="." instance=ExtResource( 31 )]
-position = Vector2( 2532.93, 779.098 )
+position = Vector2( 3857.09, 677.65 )
+
+[node name="Mask3" parent="." instance=ExtResource( 31 )]
+position = Vector2( 8264.73, 656.293 )
 
 [node name="Enemy" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2027.22, 780.91 )

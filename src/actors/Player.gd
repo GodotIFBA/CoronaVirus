@@ -75,7 +75,6 @@ func _on_Area2D_area_entered(area):
 	if "Mask" in area.name:
 		mascarado = true
 		get_node("Timer").start()
-		
 
 
 func _on_Timer_timeout():
