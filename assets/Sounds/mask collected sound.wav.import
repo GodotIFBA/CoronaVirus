@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mask collected sound.wav-d1d7726c68144124e9c279d0055d6a68.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/mask collected sound.wav"
+dest_files=[ "res://.import/mask collected sound.wav-d1d7726c68144124e9c279d0055d6a68.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -502,6 +502,11 @@ tile_data = PoolIntArray( -393026, 13, 0, -327490, 13, 0, -130945, 5, 0, -130931
 visible = false
 tile_data = PoolIntArray( -720897, 0, 0, -655361, 0, 0, -589825, 0, 0, -524289, 0, 0, -458753, 0, 0, -393217, 0, 0, -327681, 0, 0, -262145, 0, 0, -196609, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0 )
 
+[node name="invisible_wall2" parent="." instance=ExtResource( 32 )]
+visible = false
+collision_mask = 2
+tile_data = PoolIntArray( -720897, 0, 0, -655361, 0, 0, -589825, 0, 0, -524289, 0, 0, -458753, 0, 0, -393217, 0, 0, -327681, 0, 0, -262145, 0, 0, -196609, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, -65409, 0, 0, -65391, 0, 0, 65535, 0, 0, 87, 0, 0, 92, 0, 0, 127, 0, 0, 145, 0, 0, 131071, 0, 0, 65623, 0, 0, 65628, 0, 0, 65663, 0, 0, 65681, 0, 0, 196607, 0, 0, 131159, 0, 0, 131164, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0 )
+
 [node name="Background" type="Node" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
@@ -613,6 +618,31 @@ position = Vector2( 1929.58, 493.442 )
 
 [node name="Enemy" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2027.22, 780.91 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 18 )]
+position = Vector2( 10882.3, 780.703 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 8785.68, 230.495 )
+speed = Vector2( 200, 1400 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 5104.93, 767.614 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 18 )]
+position = Vector2( 13891.3, 112.25 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 18 )]
+position = Vector2( 12751.1, 119.801 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 18 )]
+position = Vector2( 13347.6, 776.737 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 18 )]
+position = Vector2( 12592.5, 791.839 )
+
+[node name="Enemy9" parent="." instance=ExtResource( 18 )]
+position = Vector2( 7411.23, 764.9 )
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_Timer_timeout"]
 
 [editable path="Player"]
