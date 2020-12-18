@@ -1,6 +1,5 @@
 extends Actor
 var mascarado = false
-var life = 0
 
 func _physics_process(delta: float) -> void:
 	get_input()
@@ -38,6 +37,10 @@ func _physics_process(delta: float) -> void:
 			$player.play("Idle")
 		else:
 			$player.play("Idle Mask")
+			
+	if ConfiguracaoBarra.life <= 0:
+		queue_free()
+
 	
 func get_direction() -> Vector2:
 	return Vector2(
@@ -66,10 +69,9 @@ func _on_Area2D_body_entered(body):
 		$AudioStreamPlayer2D.play()
 		if mascarado == true:
 			mascarado = false
-			life - 0.5
+			ConfiguracaoBarra.life -= 0.5 
 		else:
-			life - 1
-
+			ConfiguracaoBarra.life -= 1
 
 func _on_Area2D_area_entered(area):
 	if "Mask" in area.name:
