@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://src/scenario/scene01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/actors/Player.gd" type="Script" id=2]
@@ -33,22 +33,18 @@
 [ext_resource path="res://assets/Player/6.png" type="Texture" id=31]
 [ext_resource path="res://assets/Player/4.png" type="Texture" id=32]
 [ext_resource path="res://assets/Player/Jumping/5.png" type="Texture" id=33]
+[ext_resource path="res://assets/Sounds/Violin sound.wav" type="AudioStream" id=34]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Run Mask",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
 "name": "Idle Mask",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "Jump Mask",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 21 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 32 ), ExtResource( 19 ), ExtResource( 31 ) ],
@@ -56,10 +52,15 @@ animations = [ {
 "name": "Run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "Run Mask",
-"speed": 10.0
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Jump Mask",
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 30 ), ExtResource( 18 ), ExtResource( 33 ) ],
 "loop": true,
@@ -226,7 +227,7 @@ position = Vector2( 974.248, 333.25 )
 scale = Vector2( 1.22004, 1.21597 )
 frames = SubResource( 7 )
 animation = "corona"
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss"]
@@ -341,6 +342,10 @@ animation = "New Anim"
 position = Vector2( 702.372, 540.936 )
 scale = Vector2( 0.358528, 0.346113 )
 shape = SubResource( 10 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 34 )
+autoplay = true
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer_boss" to="Coronaboss" method="_on_Timer_boss_timeout"]
