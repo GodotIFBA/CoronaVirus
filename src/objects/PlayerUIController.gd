@@ -9,7 +9,8 @@ func _on_TryAgain_pressed() -> void:
 
 
 func _on_MainMenu_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().paused = false
+	get_tree().change_scene("res://src/menu/Background.tscn")
 
 
 func _on_Quit_pressed() -> void:
