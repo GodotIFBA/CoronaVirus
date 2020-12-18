@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/Enemy/Enemy 2/Left 6.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 57.1984, 81.2379 )
+extents = Vector2( 58.6127, 81.2379 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -29,10 +29,11 @@ speed = Vector2( 400, 1400 )
 [node name="CovidDetector" type="CollisionShape2D" parent="."]
 position = Vector2( -3.64899, -31.3243 )
 shape = SubResource( 1 )
+disabled = true
 
 [node name="enemy" type="AnimatedSprite" parent="."]
-position = Vector2( -5.81412, -30.9194 )
-scale = Vector2( 4.15692, 3.79733 )
+position = Vector2( -3.69287, -23.8483 )
+scale = Vector2( 3.84756, 3.79733 )
 frames = SubResource( 2 )
 animation = "walk"
 frame = 2
