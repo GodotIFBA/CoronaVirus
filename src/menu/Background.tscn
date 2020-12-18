@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/menu/background.png" type="Texture" id=1]
 [ext_resource path="res://src/menu/CreditButton.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/menu/CreditButton.gd" type="Script" id=8]
 [ext_resource path="res://assets/menu/background-sound.wav" type="AudioStream" id=9]
 [ext_resource path="res://src/menu/Background.gd" type="Script" id=10]
+[ext_resource path="res://src/menu/SoundButtonDisabled.tscn" type="PackedScene" id=11]
 
 [node name="Background" type="Node"]
 script = ExtResource( 10 )
@@ -62,6 +63,12 @@ margin_right = 1813.0
 margin_bottom = 1062.0
 rect_pivot_offset = Vector2( 88, 67 )
 
+[node name="SoundDisabled" parent="." instance=ExtResource( 11 )]
+margin_left = 1664.13
+margin_top = 917.068
+margin_right = 1813.13
+margin_bottom = 1062.07
+
 [node name="Logo" type="Sprite" parent="."]
 position = Vector2( 968, 152 )
 texture = ExtResource( 7 )
@@ -74,4 +81,6 @@ autoplay = true
 [connection signal="focus_entered" from="ExitButton" to="ExitButton" method="_on_ExitButton_focus_entered"]
 [connection signal="mouse_entered" from="ExitButton" to="ExitButton" method="_on_ExitButton_mouse_entered"]
 [connection signal="focus_entered" from="PlayButton" to="PlayButton" method="_on_PlayButton_focus_entered"]
+[connection signal="pressed" from="Sound" to="." method="_on_Sound_pressed"]
+[connection signal="pressed" from="SoundDisabled" to="." method="_on_SoundDisabled_pressed"]
 [connection signal="finished" from="BackgroundSound" to="." method="_on_BackgroundSound_finished"]

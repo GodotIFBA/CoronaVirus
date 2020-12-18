@@ -48,10 +48,10 @@ animations = [ {
 "name": "Jump",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 27 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "Jump Mask",
-"speed": 7.0
+"name": "Run Mask",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
@@ -63,10 +63,10 @@ animations = [ {
 "name": "Run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 27 ) ],
 "loop": true,
-"name": "Run Mask",
-"speed": 10.0
+"name": "Jump Mask",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

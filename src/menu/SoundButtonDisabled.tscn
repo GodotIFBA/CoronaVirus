@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/menu/SOM.png" type="Texture" id=1]
+[ext_resource path="res://src/menu/SoundButton.gd" type="Script" id=2]
+[ext_resource path="res://assets/menu/SOM-DESATIVADO.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 137, 139 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="Sound" type="Button"]
+margin_right = 149.0
+margin_bottom = 145.0
+rect_pivot_offset = Vector2( 104.878, 52.4684 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+icon = ExtResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_Sound_pressed"]

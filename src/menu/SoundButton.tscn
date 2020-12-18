@@ -1,11 +1,32 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/menu/SOM.png" type="Texture" id=1]
+[ext_resource path="res://src/menu/SoundButton.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 137, 139 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="Sound" type="Button"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_right = 149.0
+margin_bottom = 145.0
+rect_pivot_offset = Vector2( 104.878, 52.4684 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 4 )
 icon = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="." to="." method="_on_Sound_pressed"]

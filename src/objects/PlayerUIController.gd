@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func _process(delta: float) -> void:
-	$Score.text = str("Auxilio: ", GameState.score)
+	$Score.text = str("Auxilio: ", Global.score)
 	
 func _on_TryAgain_pressed() -> void:
 	get_tree().reload_current_scene()
