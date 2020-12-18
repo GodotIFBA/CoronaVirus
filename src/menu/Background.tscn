@@ -74,3 +74,4 @@ autoplay = true
 [connection signal="focus_entered" from="ExitButton" to="ExitButton" method="_on_ExitButton_focus_entered"]
 [connection signal="mouse_entered" from="ExitButton" to="ExitButton" method="_on_ExitButton_mouse_entered"]
 [connection signal="focus_entered" from="PlayButton" to="PlayButton" method="_on_PlayButton_focus_entered"]
+[connection signal="finished" from="BackgroundSound" to="." method="_on_BackgroundSound_finished"]
