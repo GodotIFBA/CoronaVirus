@@ -6,3 +6,5 @@ var life = 5
 var score = 0
 # SOM DO JOGO
 var isMuted = false
+# Contador de Componentes
+var componentes = 0
