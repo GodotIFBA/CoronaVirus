@@ -39,11 +39,6 @@ font_data = ExtResource( 22 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Jump Mask",
@@ -68,10 +63,15 @@ animations = [ {
 "loop": true,
 "name": "Run",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 63.0475, 106.603 )
+extents = Vector2( 63.0475, 101.041 )
 
 [sub_resource type="CapsuleShape2D" id=6]
 radius = 0.794672
