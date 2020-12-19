@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/Player/1 masked.png" type="Texture" id=1]
 [ext_resource path="res://src/actors/Player.gd" type="Script" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://assets/fonts/Roboto-Light.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://src/objects/PlayerUIController.gd" type="Script" id=23]
 [ext_resource path="res://assets/Sounds/Gravação (11) (online-audio-converter.com).wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/fonts/Roboto-BlackItalic.ttf" type="DynamicFontData" id=25]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -37,13 +38,12 @@ font_data = ExtResource( 21 )
 size = 40
 font_data = ExtResource( 22 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 25 )
+
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "Jump Mask",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "Idle Mask",
@@ -52,11 +52,6 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "Run Mask",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Run",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 16 ) ],
@@ -68,12 +63,22 @@ animations = [ {
 "loop": true,
 "name": "Jump",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Jump Mask",
+"speed": 7.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 63.0475, 101.041 )
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 0.794672
 height = 20.1718
 
@@ -248,15 +253,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Componentes" type="Label" parent="CanvasLayer"]
+visible = false
+margin_left = 15.1312
+margin_top = 55.7653
+margin_right = 201.131
+margin_bottom = 87.7653
+custom_fonts/font = SubResource( 8 )
+text = "Componentes: 0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="player" type="AnimatedSprite" parent="."]
 position = Vector2( 264.25, -61.8356 )
 scale = Vector2( 0.259906, 0.206898 )
-frames = SubResource( 4 )
+frames = SubResource( 9 )
 animation = "Jump Mask"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 263.773, -61.0302 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 265.405, -114.771 )
@@ -273,7 +290,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 263.442, -60.2584 )
 scale = Vector2( 80, 10 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 24 )
