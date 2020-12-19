@@ -49,11 +49,6 @@ animations = [ {
 "name": "Idle Mask",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "Run Mask",
@@ -68,6 +63,11 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
@@ -267,9 +267,11 @@ limit_right = 18500
 limit_bottom = 1064
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 524288
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 260.922, -61.5183 )
+position = Vector2( 263.442, -60.2584 )
 scale = Vector2( 80, 10 )
 shape = SubResource( 6 )
 
@@ -278,8 +280,12 @@ stream = ExtResource( 24 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 10.0
 [connection signal="pressed" from="CanvasLayer/Pause/Back" to="CanvasLayer" method="_on_Back_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/TryAgain" to="CanvasLayer" method="_on_TryAgain_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/MainMenu" to="CanvasLayer" method="_on_MainMenu_pressed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
