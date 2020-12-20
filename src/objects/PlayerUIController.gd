@@ -2,8 +2,8 @@ extends CanvasLayer
 
 func _process(delta: float) -> void:
 	$Score.text = str("Auxilio: ", Global.score)
-	
 	$Componentes.text = str("Componentes: ", Global.componentes)
+	
 func _on_TryAgain_pressed() -> void:
 	get_tree().reload_current_scene()
 	get_tree().paused = false
