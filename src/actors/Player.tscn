@@ -38,44 +38,44 @@ font_data = ExtResource( 21 )
 size = 40
 font_data = ExtResource( 22 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=4]
 size = 20
 font_data = ExtResource( 25 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "Idle Mask",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Jump Mask",
+"speed": 7.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "Run Mask",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 7.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "Jump Mask",
+"name": "Jump",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 63.0475, 101.041 )
 
 [sub_resource type="CapsuleShape2D" id=7]
@@ -259,8 +259,8 @@ margin_left = 15.1312
 margin_top = 55.7653
 margin_right = 201.131
 margin_bottom = 87.7653
-custom_fonts/font = SubResource( 8 )
-text = "Componentes: 0000"
+custom_fonts/font = SubResource( 4 )
+text = "Componentes: 00"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -268,12 +268,12 @@ __meta__ = {
 [node name="player" type="AnimatedSprite" parent="."]
 position = Vector2( 264.25, -61.8356 )
 scale = Vector2( 0.259906, 0.206898 )
-frames = SubResource( 9 )
+frames = SubResource( 5 )
 animation = "Jump Mask"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 263.773, -61.0302 )
-shape = SubResource( 10 )
+shape = SubResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 265.405, -114.771 )
