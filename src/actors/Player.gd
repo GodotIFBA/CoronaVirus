@@ -75,6 +75,8 @@ func _on_Area2D_area_entered(area):
 	if "Mask" in area.name:
 		mascarado = true
 		get_node("Timer").start()
+	elif "Alcool" in area.name:
+		life =+ 1
 
 
 func _on_Timer_timeout():
