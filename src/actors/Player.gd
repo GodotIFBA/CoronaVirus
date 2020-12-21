@@ -77,6 +77,8 @@ func _on_Area2D_area_entered(area):
 		get_node("Timer").start()
 	elif "Alcool" in area.name:
 		life =+ 1
+	elif "alcoolGel" in area.name:
+		life =+ 1
 
 
 func _on_Timer_timeout():

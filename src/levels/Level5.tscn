@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://src/scenario/scene01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/corona/04.png" type="Texture" id=9]
 [ext_resource path="res://assets/corona/05.png" type="Texture" id=10]
 [ext_resource path="res://src/actors/Coronaboss.gd" type="Script" id=11]
+[ext_resource path="res://src/objects/alcool_spawner.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/actors/Ataque.gd" type="Script" id=13]
 [ext_resource path="res://assets/backgrounds/final_stage.jpg" type="Texture" id=14]
 [ext_resource path="res://src/Ataque.tscn" type="PackedScene" id=15]
@@ -164,6 +165,7 @@ position = Vector2( 974.248, 333.25 )
 scale = Vector2( 1.22004, 1.21597 )
 frames = SubResource( 5 )
 animation = "corona"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss"]
@@ -287,6 +289,8 @@ position = Vector2( 696, 912 )
 
 [node name="Camera2D" parent="Player" index="3"]
 current = false
+
+[node name="alcool_spawner" parent="." instance=ExtResource( 12 )]
 [connection signal="timeout" from="Timer_boss" to="Coronaboss" method="_on_Timer_boss_timeout"]
 
 [editable path="Player"]
