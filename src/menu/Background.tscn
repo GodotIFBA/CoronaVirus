@@ -47,7 +47,7 @@ margin_bottom = 546.0
 focus_neighbour_top = NodePath("../ExitButton")
 focus_neighbour_bottom = NodePath("../CreditButton")
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-reference_path = "res://src/levels/Level1.tscn"
+reference_path = "res://src/cutscenes/Intro.tscn"
 start_focused = true
 
 [node name="HelpButton" parent="." instance=ExtResource( 5 )]
