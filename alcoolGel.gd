@@ -15,4 +15,6 @@ func _process(delta):
 
 func _on_alcoolGel_body_entered(body):
 	if body.name == "Player":
+			Global.life += 1
+			print(Global.life)
 			animation.play("fade out")

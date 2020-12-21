@@ -165,7 +165,7 @@ position = Vector2( 974.248, 333.25 )
 scale = Vector2( 1.22004, 1.21597 )
 frames = SubResource( 5 )
 animation = "corona"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss"]

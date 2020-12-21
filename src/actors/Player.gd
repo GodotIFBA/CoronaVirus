@@ -1,6 +1,5 @@
 extends Actor
 var mascarado = false
-var life = 3
 
 func _physics_process(delta: float) -> void:
 	get_input()
@@ -67,8 +66,9 @@ func _on_Area2D_body_entered(body):
 		if mascarado == true:
 			mascarado = false
 		else:
-			life -= 1
-			if life == 0:
+			Global.life -= 1
+			print(Global.life)
+			if Global.life == 0:
 				queue_free()
 				get_tree().change_scene("res://src/GameOver.tscn")
 
@@ -77,10 +77,6 @@ func _on_Area2D_area_entered(area):
 	if "Mask" in area.name:
 		mascarado = true
 		get_node("Timer").start()
-	elif "Alcool" in area.name:
-		life =+ 1
-	elif "alcoolGel" in area.name:
-		life =+ 1
 
 
 func _on_Timer_timeout():
