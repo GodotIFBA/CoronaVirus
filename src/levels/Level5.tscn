@@ -165,16 +165,12 @@ position = Vector2( 974.248, 333.25 )
 scale = Vector2( 1.22004, 1.21597 )
 frames = SubResource( 5 )
 animation = "corona"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coronaboss"]
 position = Vector2( 964.023, 335.437 )
 shape = SubResource( 6 )
-
-[node name="Ataque" parent="Coronaboss" instance=ExtResource( 15 )]
-position = Vector2( 259.989, 120.291 )
-collision_mask = 524297
 
 [node name="Ataque8" parent="Coronaboss" instance=ExtResource( 15 )]
 position = Vector2( -229.972, -245.803 )

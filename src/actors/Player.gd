@@ -1,6 +1,6 @@
 extends Actor
 var mascarado = false
-var life = 0
+var life = 3
 
 func _physics_process(delta: float) -> void:
 	get_input()
@@ -66,9 +66,11 @@ func _on_Area2D_body_entered(body):
 		$AudioStreamPlayer2D.play(0.0)
 		if mascarado == true:
 			mascarado = false
-			life - 0.5
 		else:
-			life - 1
+			life -= 1
+			if life == 0:
+				queue_free()
+				get_tree().change_scene("res://src/GameOver.tscn")
 
 
 func _on_Area2D_area_entered(area):
