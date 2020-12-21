@@ -90,8 +90,6 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -970.589 ],
 "_edit_vertical_guides_": [ -2902.61 ]
 }
-speed = null
-gravity = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
