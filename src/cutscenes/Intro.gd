@@ -12,3 +12,7 @@ func _ready():
 	introAnimation.play("fade out 2")
 	yield(introAnimation,"animation_finished")
 	get_parent().get_tree().change_scene("res://src/levels/Level1.tscn")
+	
+func _physics_process(delta):
+	if Input.is_action_just_pressed("skip"):
+		get_parent().get_tree().change_scene("res://src/levels/Level1.tscn")
