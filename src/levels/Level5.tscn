@@ -16,8 +16,65 @@
 [ext_resource path="res://assets/backgrounds/final_stage.jpg" type="Texture" id=14]
 [ext_resource path="res://src/Ataque.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/levels/Timer_boss.gd" type="Script" id=16]
+<<<<<<< Updated upstream
 [ext_resource path="res://src/scenario/FinalBossSound.tscn" type="PackedScene" id=34]
 [ext_resource path="res://assets/backgrounds/4238821.jpg" type="Texture" id=35]
+=======
+[ext_resource path="res://assets/Player/4 masked.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player/Jumping/4.png" type="Texture" id=18]
+[ext_resource path="res://assets/Player/5.png" type="Texture" id=19]
+[ext_resource path="res://assets/Player/3 masked.png" type="Texture" id=20]
+[ext_resource path="res://assets/Player/1.png" type="Texture" id=21]
+[ext_resource path="res://assets/Player/6 masked.png" type="Texture" id=22]
+[ext_resource path="res://assets/Player/3.png" type="Texture" id=23]
+[ext_resource path="res://assets/Player/Jumping/4 masked.png" type="Texture" id=24]
+[ext_resource path="res://assets/Player/2 masked.png" type="Texture" id=25]
+[ext_resource path="res://assets/Player/Jumping/3 masked.png" type="Texture" id=26]
+[ext_resource path="res://assets/Player/Jumping/5 masked.png" type="Texture" id=27]
+[ext_resource path="res://assets/Player/1 masked.png" type="Texture" id=28]
+[ext_resource path="res://assets/Player/2.png" type="Texture" id=29]
+[ext_resource path="res://assets/Player/Jumping/3.png" type="Texture" id=30]
+[ext_resource path="res://assets/Player/6.png" type="Texture" id=31]
+[ext_resource path="res://assets/Player/4.png" type="Texture" id=32]
+[ext_resource path="res://assets/Player/Jumping/5.png" type="Texture" id=33]
+[ext_resource path="res://src/objects/CanvasBarLife.tscn" type="PackedScene" id=34]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 32 ), ExtResource( 19 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 18 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Run Mask",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "Idle Mask",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Jump Mask",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 63.0475, 106.603 )
+>>>>>>> Stashed changes
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
