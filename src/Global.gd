@@ -1,7 +1,7 @@
 extends Node
 
 # VIDA DO JOGADOR
-var life = 5
+var life = 6
 # SCORE DO JOGO
 var score = 0
 # SOM DO JOGO

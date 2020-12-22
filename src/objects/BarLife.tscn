@@ -12,7 +12,7 @@ margin_right = 201.0
 margin_bottom = 28.0
 max_value = 5.0
 texture_under = ExtResource( 1 )
-texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
