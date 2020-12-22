@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/scenario/scene01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/backgrounds/final_stage.jpg" type="Texture" id=14]
 [ext_resource path="res://src/Ataque.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/levels/Timer_boss.gd" type="Script" id=16]
+[ext_resource path="res://src/objects/CanvasBarLife.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/scenario/FinalBossSound.tscn" type="PackedScene" id=34]
 [ext_resource path="res://assets/backgrounds/4238821.jpg" type="Texture" id=35]
 
@@ -287,6 +288,8 @@ position = Vector2( 696, 912 )
 current = false
 
 [node name="alcool_spawner" parent="." instance=ExtResource( 12 )]
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 17 )]
 [connection signal="timeout" from="Timer_boss" to="Coronaboss" method="_on_Timer_boss_timeout"]
 
 [editable path="Player"]
