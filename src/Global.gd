@@ -1,6 +1,8 @@
 extends Node
 
-# VIDA DO JOGADOR
+# VIDA MÁXIMA DO JOGADOR
+var max_life = 6
+# VIDA DO JOGADOR QUE SERÁ DECREMENTADA
 var life = 6
 # SCORE DO JOGO
 var score = 0
