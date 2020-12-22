@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/fonts/Roboto-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/cutscenes/Credits.gd" type="Script" id=2]
+[ext_resource path="res://assets/menu/background.png" type="Texture" id=3]
+[ext_resource path="res://assets/cutscene/escaped.png" type="Texture" id=4]
+[ext_resource path="res://assets/cutscene/congratulations.png" type="Texture" id=5]
+[ext_resource path="res://src/menu/PlayButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/menu/ExitButton.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 76
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "fadeOut"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 962.475, 537.062 )
+texture = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -956.0
+margin_top = -87.0
+margin_right = 956.0
+margin_bottom = 87.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -956.0
+margin_top = 19.0
+margin_right = 956.0
+margin_bottom = 193.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -956.0
+margin_top = -274.0
+margin_right = 956.0
+margin_bottom = 293.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="congratulations" type="Sprite" parent="."]
+position = Vector2( 953.292, 206.749 )
+texture = ExtResource( 5 )
+
+[node name="escaped" type="Sprite" parent="."]
+position = Vector2( 948.803, 368.384 )
+texture = ExtResource( 4 )
+
+[node name="ExitButton" parent="." instance=ExtResource( 7 )]
+margin_left = 823.087
+margin_top = 682.673
+margin_right = 1139.09
+margin_bottom = 822.673
+
+[node name="PlayButton" parent="." instance=ExtResource( 6 )]
+margin_left = 814.107
+margin_top = 505.324
+margin_right = 826.108
+margin_bottom = 651.324
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fadeOut = SubResource( 2 )
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

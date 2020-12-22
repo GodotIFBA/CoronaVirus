@@ -23,9 +23,6 @@ func _process(delta):
 		if($".".position.x <= posicao_final_esquerda):
 			flip = true
 	
-
-
-
 func _on_Timer_boss_timeout():
-	
 	queue_free()
+	get_tree().change_scene("res://src/cutscenes/Credits.tscn")

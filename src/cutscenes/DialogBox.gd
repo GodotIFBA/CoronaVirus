@@ -3,38 +3,39 @@ extends Control
 var dialog = [
 	{
 		"author": "Corona",
-		"message": "Oi essa é a primeira fala",
+		"message": "Então você conseguiu chegar até aqui? Isso não muda nada, a ignorância da população vai continuar a mesma, afinal de contas, não passo de um gripezinha HAHAHA",
+	},
+	{
+		"author": "Player",
+		"message": "Sim, a ignorância de muitas pessoas podea até continuar a mesma, mas esses tempos dificeis mostrou o quão forte e adaptaveis nós podemos ser.",
 	},
 	{
 		"author": "Corona",
-		"message": "Segunda fala do corona",
+		"message": "E o que você espera vindo até aqui me confontrar? Conversa fiada não vai me fazer mudar de ideia",
 	},
 	{
 		"author": "Player",
-		"message": "Essa é a primeira fala do jogador",
-	},
-	{
-		"author": "Corona",
-		"message": "Ultima fala do corona",
+		"message": "eu.. eu.. eu vim te dizer..",
 	},
 	{
 		"author": "Player",
-		"message": "Essa é a primeira fala do jogador",
+		"message": "[center]SE SAIA![/center]"
 	},
 	{
 		"author": "Player",
-		"message": "Essa é a primeira fala do jogador",
-	},
+		"message": "[center]Sobreviva por 1 minuto aos ataques do vírus[/center]"
+	}
 ]
 # Variaveis auxiliares
 var dialogIndex = 0
 var finished = false
 
 func _ready():
+	$RichTextLabel2.visible = false
 	resetState()
 	loadDialog()
 	
-func _process(delta):
+func _process(_delta):
 	$next.visible = finished
 	# Verifica de o jogador apertou `enter`
 	if Input.is_action_just_pressed("ui_accept"):
@@ -62,7 +63,8 @@ func loadDialog():
 		$Tween.start()
 	else:
 		queue_free()
+		get_tree().change_scene("res://src/levels/Level5.tscn")
 	dialogIndex += 1
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	finished = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/cutscenes/DialogBox.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
@@ -6,10 +6,16 @@
 [ext_resource path="res://assets/backgrounds/final_stage.jpg" type="Texture" id=4]
 [ext_resource path="res://assets/Player/3 masked.png" type="Texture" id=5]
 [ext_resource path="res://assets/corona/01.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/Roboto-Black.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 32
+size = 56
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 76
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "IDLE"
@@ -34,11 +40,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="final_stage" type="Sprite" parent="."]
-position = Vector2( 958.445, 537.979 )
-scale = Vector2( 1.28685, 1.28685 )
-texture = ExtResource( 4 )
-
 [node name="DialogBox" type="Control" parent="."]
 anchor_top = 0.792
 anchor_right = 1.0
@@ -51,9 +52,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="final_stage" type="Sprite" parent="DialogBox"]
+position = Vector2( 958.445, 537.979 )
+scale = Vector2( 1.28685, 1.28685 )
+texture = ExtResource( 4 )
+
 [node name="Corona" type="Sprite" parent="DialogBox"]
-position = Vector2( 1581.41, 714.205 )
-scale = Vector2( 1.46194, 1.46194 )
+position = Vector2( 1545.95, 703.967 )
+scale = Vector2( 1.44645, 1.44645 )
 texture = ExtResource( 6 )
 
 [node name="Player" type="Sprite" parent="DialogBox"]
@@ -78,13 +84,24 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
-margin_top = 869.0
+margin_top = 865.0
 margin_right = 1880.0
 margin_bottom = 1039.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = ", consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-text = "texto"
+text = ", consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="DialogBox"]
+margin_left = 3.0
+margin_top = 408.0
+margin_right = 1919.0
+margin_bottom = 622.0
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
