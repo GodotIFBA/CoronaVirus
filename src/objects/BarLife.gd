@@ -7,12 +7,11 @@ var barraLaranja = preload("res://assets/objects/barraLaranja.jpeg")
 onready var lifeBar = $LifeBar
 
 func _ready():
-	if get_parent() and get_parent().get("max_health"):
-		lifeBar.max_value = get_parent().max_health
+	lifeBar.max_value = Global.life
 		
 func _process(delta):
 	global_rotation = 0
-	#atualizarBarra(ConfiguracaoBarra.life)
+	atualizarBarra(Global.life)
 
 func atualizarBarra(value):
 	lifeBar.texture_progress = barraVerde
