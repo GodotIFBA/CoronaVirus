@@ -7,7 +7,7 @@
 [ext_resource path="res://src/menu/HelpButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/menu/SoundButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/menu/logo.png" type="Texture" id=7]
-[ext_resource path="res://src/menu/CreditButton.gd" type="Script" id=8]
+[ext_resource path="res://src/menu/HelpButton.gd" type="Script" id=8]
 [ext_resource path="res://assets/menu/background-sound.wav" type="AudioStream" id=9]
 [ext_resource path="res://src/menu/Background.gd" type="Script" id=10]
 [ext_resource path="res://src/menu/SoundButtonDisabled.tscn" type="PackedScene" id=11]
@@ -29,7 +29,6 @@ margin_right = 1136.0
 margin_bottom = 714.0
 focus_neighbour_top = NodePath("../PlayButton")
 focus_neighbour_bottom = NodePath("../ExitButton")
-script = ExtResource( 8 )
 
 [node name="ExitButton" parent="." instance=ExtResource( 3 )]
 margin_left = 808.0
@@ -55,6 +54,7 @@ margin_left = 112.0
 margin_top = 912.0
 margin_right = 261.0
 margin_bottom = 1056.0
+script = ExtResource( 8 )
 
 [node name="Sound" parent="." instance=ExtResource( 6 )]
 margin_left = 1664.0
@@ -78,9 +78,11 @@ stream = ExtResource( 9 )
 autoplay = true
 [connection signal="focus_entered" from="CreditButton" to="CreditButton" method="_on_CreditButton_focus_entered"]
 [connection signal="mouse_entered" from="CreditButton" to="CreditButton" method="_on_CreditButton_mouse_entered"]
+[connection signal="pressed" from="CreditButton" to="CreditButton" method="_on_CreditButton_pressed"]
 [connection signal="focus_entered" from="ExitButton" to="ExitButton" method="_on_ExitButton_focus_entered"]
 [connection signal="mouse_entered" from="ExitButton" to="ExitButton" method="_on_ExitButton_mouse_entered"]
 [connection signal="focus_entered" from="PlayButton" to="PlayButton" method="_on_PlayButton_focus_entered"]
+[connection signal="pressed" from="HelpButton" to="HelpButton" method="_on_HelpButton_pressed"]
 [connection signal="pressed" from="Sound" to="." method="_on_Sound_pressed"]
 [connection signal="pressed" from="SoundDisabled" to="." method="_on_SoundDisabled_pressed"]
 [connection signal="finished" from="BackgroundSound" to="." method="_on_BackgroundSound_finished"]

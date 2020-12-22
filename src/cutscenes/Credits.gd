@@ -49,6 +49,7 @@ func loadSecondText():
 func winScene():
 	$RichTextLabel.visible = false
 	$RichTextLabel2.visible = false
+	$RichTextLabel3.visible = false
 	$congratulations.visible = true
 	$escaped.visible = true
 	$ExitButton.visible = true

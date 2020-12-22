@@ -23,7 +23,7 @@ var dialog = [
 	},
 	{
 		"author": "Player",
-		"message": "[center]Sobreviva por 1 minuto aos ataques do vírus[/center]"
+		"message": "[center]Sobreviva por 45 segundos aos ataques do vírus[/center]"
 	}
 ]
 # Variaveis auxiliares

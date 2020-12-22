@@ -12,13 +12,12 @@
 size = 56
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 76
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "IDLE"
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -100,7 +99,7 @@ margin_left = 3.0
 margin_top = 408.0
 margin_right = 1919.0
 margin_bottom = 622.0
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -113,7 +112,7 @@ texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/next"]
 autoplay = "IDLE"
-anims/IDLE = SubResource( 2 )
+anims/IDLE = SubResource( 3 )
 
 [node name="Tween" type="Tween" parent="DialogBox"]
 [connection signal="tween_completed" from="DialogBox/Tween" to="DialogBox" method="_on_Tween_tween_completed"]

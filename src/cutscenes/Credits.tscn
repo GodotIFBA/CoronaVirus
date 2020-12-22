@@ -108,16 +108,25 @@ position = Vector2( 948.803, 368.384 )
 texture = ExtResource( 4 )
 
 [node name="ExitButton" parent="." instance=ExtResource( 7 )]
-margin_left = 823.087
-margin_top = 682.673
-margin_right = 1139.09
-margin_bottom = 822.673
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -158.001
+margin_top = 106.0
+margin_right = 158.001
+margin_bottom = 246.0
 
 [node name="PlayButton" parent="." instance=ExtResource( 6 )]
-margin_left = 814.107
-margin_top = 505.324
-margin_right = 826.108
-margin_bottom = 651.324
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.0
+margin_top = -73.0
+margin_right = 164.0
+margin_bottom = 73.0
+reference_path = "res://src/cutscenes/Intro.tscn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fadeOut = SubResource( 2 )
