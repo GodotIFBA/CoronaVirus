@@ -23,7 +23,7 @@
 [ext_resource path="res://assets/fonts/Roboto-Italic.ttf" type="DynamicFontData" id=21]
 [ext_resource path="res://assets/fonts/Roboto-Light.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://src/objects/PlayerUIController.gd" type="Script" id=23]
-[ext_resource path="res://assets/Sounds/Gravação (11) (online-audio-converter.com).wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/Sounds/Gravacao (11) (online-audio-converter.com).wav" type="AudioStream" id=24]
 [ext_resource path="res://assets/fonts/Roboto-BlackItalic.ttf" type="DynamicFontData" id=25]
 
 [sub_resource type="DynamicFont" id=1]
@@ -49,6 +49,16 @@ animations = [ {
 "name": "Idle Mask",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 7.0
+}, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Jump Mask",
@@ -59,19 +69,9 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "Run Mask",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Run",
 "speed": 10.0
 } ]
 
