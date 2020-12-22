@@ -7,7 +7,7 @@ var dialog = [
 	},
 	{
 		"author": "Player",
-		"message": "Sim, a ignorância de muitas pessoas podea até continuar a mesma, mas esses tempos dificeis mostrou o quão forte e adaptaveis nós podemos ser.",
+		"message": "Sim, a ignorância de muitas pessoas pode até continuar a mesma, mas esses tempos dificeis mostrou o quão forte e adaptaveis nós podemos ser.",
 	},
 	{
 		"author": "Corona",
