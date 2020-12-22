@@ -1,5 +1,6 @@
 extends Node
-
+# CONSEGUIU OU NÃO COLETAR A VACINA
+var vacina = false
 # VIDA MÁXIMA DO JOGADOR
 var max_life = 6
 # VIDA DO JOGADOR QUE SERÁ DECREMENTADA
