@@ -54,24 +54,24 @@ animations = [ {
 "name": "Jump Mask",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 16 ) ],
 "loop": true,
-"name": "Run",
-"speed": 10.0
+"name": "Idle",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "Run Mask",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
 "speed": 10.0
 } ]
 
@@ -83,8 +83,8 @@ radius = 0.794672
 height = 20.1718
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 219.813, 296.265 )
-collision_mask = 14
+position = Vector2( -120.009, 567.88 )
+collision_mask = 15
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -970.589 ],
@@ -244,6 +244,7 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="CanvasLayer"]
+visible = false
 margin_left = 20.9763
 margin_right = 263.976
 margin_bottom = 48.0
